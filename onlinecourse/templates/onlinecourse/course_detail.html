@@ -17,5 +17,11 @@
         <p>{{lesson.content}}</p>
     </div>
     {% endfor %}
+    <div>
+        <form action="{% url 'onlinecourse:course_list_view' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Go back" />
+        </form>
+    </div>
 </body>
 </html>

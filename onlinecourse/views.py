@@ -9,7 +9,7 @@ from django.http import Http404
 # Create your views here.
 def course_list_view(request):
     context = {}
-    if request.method == "GET":
+    if request.method: #== "GET": #Disabled this part of the code to enable "go-back button"
         top_ten_courses = Course.objects.order_by('total_enrollment')[:10]
         # context = {'course_list': courses}
         # Append the course list as an entry of context dict
